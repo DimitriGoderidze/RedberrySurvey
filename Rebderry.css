@@ -1,0 +1,228 @@
+html {
+  height: max-content;
+}
+
+.rect {
+  margin-top: 130px;
+  margin-left: 50px;
+  position: absolute;
+  height: 75px;
+  width: 500px;
+  background-color: #d6d16e;
+}
+.radioButton {
+  margin-left: 30px !important;
+}
+
+.circle {
+  margin-top: 220px;
+  margin-left: 60px;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.fa-hand-point-right {
+  color: orange;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 100;
+  margin-left: 30px;
+}
+
+body {
+  width: 1200px;
+  height: 700px;
+  text-align: center;
+  height: max-content;
+  background-color: #b5c0c7;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.inputContainer {
+  margin-bottom: 15px;
+  max-width: 300px;
+  margin: 20px;
+}
+
+.inputContainer[data-errorName]::after {
+  content: attr(data-errorName);
+  font-size: 80%;
+  border-color: #c92432;
+  color: #c92432;
+}
+
+.input {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.button {
+  border: none;
+}
+.buttonContainerNext {
+  margin-right: 30px;
+  position: absolute;
+  bottom: 20px;
+  text-align: start;
+  margin-left: 30px;
+}
+.buttonContainerPrevious {
+  margin-right: 30px;
+  position: absolute;
+  bottom: 20px;
+  margin-right: 30px;
+  right: 0;
+}
+#recomendationsButton {
+  background-color: #208298;
+  border-radius: 42px;
+  right: 0;
+  bottom: 20px;
+  text-align: start;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+#recomendationsPrevius {
+  margin-left: 550px;
+  margin-bottom: 20px;
+}
+
+hr {
+  width: 90%;
+  border: 0;
+  height: 2px;
+  background: #000;
+  opacity: 1;
+  margin: 1%;
+}
+h2 {
+  text-align: end;
+  margin-right: 10%;
+}
+textarea {
+  margin-left: 30px;
+  border: 1px solid black;
+}
+.textareaComment {
+  margin: 10px;
+}
+
+.fa {
+  margin-left: 0%;
+}
+.center {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.imgContainer {
+  height: 500ox;
+}
+.row {
+  background-color: white;
+  height: 700px;
+  margin: 30px;
+  width: 1400px;
+  display: flex;
+  text-align: left;
+}
+.column {
+  height: 700px;
+  width: 700px;
+  flex: 50%;
+  border: 1px solid black;
+  text-align: left;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.column::-webkit-scrollbar {
+  display: none;
+}
+
+.backImg {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 600px;
+}
+
+.space {
+  height: 3%;
+}
+
+.redbery {
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: xx-large;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.image2container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 600px;
+}
+
+#introImg {
+  width: 8%;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+img {
+  max-width: 100%;
+}
+
+#introduction {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-family: "ALK Rounded Nusx Med", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+#introButton {
+  font-size: 50px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+#introButton:hover {
+  text-shadow: 4px 4px 0 gray;
+}
+
+#covid19,
+#test,
+#anti,
+#testResults,
+#testResults,
+#vaccinated,
+#booking,
+#bookingMoh1,
+#bookingMoh2,
+#vaccinatedNumber,
+#notVaccinated,
+#recomendations,
+#thanks,
+#identification {
+  display: none;
+}
+
+#hi {
+  display: none;
+}
