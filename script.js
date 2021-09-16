@@ -45,6 +45,10 @@ var nameError = document.getElementById("nameError");
 var surnameError = document.getElementById("surnameError");
 var imailError = document.getElementById("imailError");
 var identificationForm = document.getElementById("identificationForm");
+var dateB = document.getElementById("dateB");
+
+var covid19Previus = document.getElementById("covid19Previus");
+var vaccinated = document.getElementById("vaccinated");
 
 introButton.addEventListener("click", function () {
   introduction.style.display = "none";
@@ -186,19 +190,97 @@ $("#tNo").click(function () {
 
 var testResultsButton = document.getElementById("testResultsButton");
 
-testResults.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  info.testResult = numberA.value;
-  info.testDate = dateA.value;
-  anti.style.display = "inline-block";
-});
-var covid19Previus = document.getElementById("covid19Previus");
-var vaccinated = document.getElementById("vaccinated");
+var dateRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$/;
+var numberRegex = /[0-9]/;
 
-anti.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  info.covidDate = date.value;
-  covid19Button.disabled = false;
+var dateA = document.getElementById("dateA");
+var dateAError = document.getElementById("dateAError");
+var numberA = document.getElementById("numberA");
+var numberAError = document.getElementById("numberAError");
+
+dateA.addEventListener("focusout", function () {
+  if (
+    dateBError.getAttribute("data-errorName") == "" &&
+    numberAError.getAttribute("data-errorName") == "" &&
+    dateRegex.test(dateA.value)
+  ) {
+    dateAError.setAttribute("data-errorName", "");
+    covid19Button.disabled = false;
+    anti.style.display = "inline-block";
+  } else if (
+    numberAError.getAttribute("data-errorName") == "" &&
+    dateRegex.test(dateA.value)
+  ) {
+    dateAError.setAttribute("data-errorName", "");
+    info.testResult = numberA.value;
+    info.testDate = dateA.value;
+    anti.style.display = "inline-block";
+  } else if (!dateRegex.test(dateA.value)) {
+    dateAError.setAttribute("data-errorName", "მიუთითეთ სწორი თარიღი დდ/თთ/წწ");
+    covid19Button.disabled = true;
+    anti.style.display = "none";
+  } else if (dateRegex.test(dateA.value)) {
+    dateAError.setAttribute("data-errorName", "");
+  }
+});
+
+numberA.addEventListener("focusout", function () {
+  if (
+    dateBError.getAttribute("data-errorName") == "" &&
+    dateAError.getAttribute("data-errorName") == "" &&
+    numberRegex.test(numberA.value)
+  ) {
+    numberAError.setAttribute("data-errorName", "");
+    covid19Button.disabled = false;
+    anti.style.display = "inline-block";
+  } else if (
+    dateAError.getAttribute("data-errorName") == "" &&
+    numberRegex.test(numberA.value)
+  ) {
+    numberAError.setAttribute("data-errorName", "");
+    info.testResult = numberA.value;
+    info.testDate = dateA.value;
+    anti.style.display = "inline-block";
+  } else if (!numberRegex.test(numberA.value)) {
+    numberAError.setAttribute("data-errorName", "გთხოვთ მიუთითეთ რიცხვი");
+    anti.style.display = "none";
+    covid19Button.disabled = true;
+  } else if (numberRegex.test(numberA.value)) {
+    numberAError.setAttribute("data-errorName", "");
+  }
+});
+
+var dateBError = document.getElementById("dateBError");
+
+dateB.addEventListener("focusout", function () {
+  if (dateRegex.test(dateB.value) && $("#tNo").is(":checked")) {
+    dateBError.setAttribute("data-errorName", "");
+    info.covidDate = dateB.value;
+    covid19Button.disabled = false;
+  } else if (dateRegex.test(dateB.value)) {
+    dateBError.setAttribute("data-errorName", "");
+    info.covidDate = dateB.value;
+    covid19Button.disabled = false;
+  } else if (!dateRegex.test(dateB.value)) {
+    dateBError.setAttribute("data-errorName", "მიუთითეთ სწორი თარიღი დდ/თთ/წწ");
+    covid19Button.disabled = true;
+  }
+});
+
+numberA.addEventListener("focusout", function () {
+  if (
+    dateAError.getAttribute("data-errorName") == "" &&
+    numberRegex.test(numberA.value)
+  ) {
+    info.testResult = numberA.value;
+    info.testDate = dateA.value;
+    anti.style.display = "inline-block";
+  } else if (!numberRegex.test(numberA.value)) {
+    numberAError.setAttribute("data-errorName", "გთხოვთ მიუთითეთ რიცხვი");
+    covid19Button.disabled = true;
+  } else if (numberRegex.test(numberA.value)) {
+    numberAError.setAttribute("data-errorName", "");
+  }
 });
 
 covid19Button.addEventListener("click", function (evt) {
