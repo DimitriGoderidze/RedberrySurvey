@@ -42,7 +42,7 @@
                         <input type="text" id="imail" value=""><br>
                     </div><br>
                     <div style="height: 10%;"></div>
-                    <hr>
+                    <hr id="hr1">
                     <p>*-ით მონიშნული ველების შევსება სავალდებულოა</p>
                 </form>
 
@@ -73,44 +73,37 @@
                 <div class="redbery">REDBERY</div>
                 <form id="covid19Form" noValidate="false">
                     <h1>გააქვს გადატანილი კოვიდ 19?</h1>
-                    <input id="yes" type="radio" class="radioButton" class="radioButton" name="covid" value="yes" />
-                    <label for="yes">კი</label><br>
+                    <input id="yes" type="radio" class="radioButton" name="covid" value="yes" />
+                    <label for="yes" class="radioLabel">კი</label><br>
                     <input id="no" type="radio" class="radioButton" name="covid" value="no" />
-                    <label for="no">არა</label><br>
+                    <label for="no" class="radioLabel">არა</label><br>
                     <input id="now" type="radio" class="radioButton" name="covid" value="now" />
-                    <label for="now">ახლა მაქვს</label><br>
+                    <label for="now" class="radioLabel">ახლა მაქვს</label><br>
                     <div id="test">
                         <form>
                             <h1>შემთხვევით ანტისხეულების ტესტი ხომ არ გაქვს გაკეთებული</h1>
                             <input id="tYes" type="radio" class="radioButton" name="test" value="yes" />
-                            <label for="tYes">კი</label><br>
+                            <label for="tYes" class="radioLabel">კი</label><br>
                             <input id="tNo" type="radio" class="radioButton" name="test" value="no" />
-                            <label for="tNo">არა</label><br>
+                            <label for="tNo" class="radioLabel">არა</label><br>
                         </form>
                     </div>
                     <form id="testResults">
-                        <h1>თუ გახსოვს, გთხოვ მიუთითე, მიახლოებითი თარიღი და რაოდენობა ანტისხეულების</h1>
-                        <input type="text" id="dateA" value="" placeholder="დდ/თთ/წწ"
-                            oninvalid="this.setCustomValidity('მიუთითეთ სწორი თარიღი დდ/თთ/წწ')"
-                            oninput="this.setCustomValidity('')"
-                            pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$" required /><br>
-                        <div class="space"></div>
-                        <input type="number" id="numberA" pattern="[0-9]*" value=""
-                            placeholder="ანტისხეულების რაოდენობა"
-                            oninvalid="this.setCustomValidity('მიუთითეთ სწორი რაოდენობა')"
-                            oninput="this.setCustomValidity('')" required><br>
-                        <button style="border:none; background: none;" type="submit"
-                            id="testResultsButton">დადასტურება</button>
+                        <h1>თუ გახსოვს, გთხოვ მიუთითე, მიახლოებითი თარიღი (დღე/თვე/წელი) და რაოდენობა ანტისხეულების</h1>
+                        <div class="inputContainer" data-errorName="*" id="dateAError" style="height: 30px;">
+                            <input type="text" id="dateA" value="" placeholder="დდ/თთ/წწ" required /><br>
+                        </div><br>
+                        <div class="inputContainer" data-errorName="*" id="numberAError" style="height: 30px;">
+                            <input type="number" id="numberA" pattern="[0-9]*" value=""
+                                placeholder="ანტისხეულების რაოდენობა" required><br>
+                        </div>
                     </form>
 
                     <form id="anti">
                         <h1>მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი), როდის გქონდა კოვიდ19</h1>
-                        <input type="text" id="date" value="" placeholder="დდ/თთ/წწ"
-                            oninvalid="this.setCustomValidity('მიუთითეთ სწორი თარიღი დდ/თთ/წწ')"
-                            oninput="this.setCustomValidity('')"
-                            pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$" required /><br>
-                        <button style="border:none; background: none;" type="submit"
-                            id="antiButton">დადასრურება</button>
+                        <div class="inputContainer" data-errorName="*" id="dateBError">
+                            <input type="text" id="dateB" value="" placeholder="დდ/თთ/წწ" required /><br>
+                        </div>
                     </form>
                 </form>
                 <div class="buttonContainerPrevious">
@@ -143,22 +136,22 @@
                 <form id="vaccinatedForm" noValidate="false">
                     <h1>უკვე აცრილი ხარ?</h1>
                     <input id="vYes" type="radio" class="radioButton" name="vaccinated" value="vYes" />
-                    <label for="vYes">კი</label><br>
+                    <label for="vYes" class="radioLabel">კი</label><br>
                     <input id="vNo" type="radio" class="radioButton" name="vaccinated" value="vNo" />
-                    <label for="vNo">არა</label><br>
+                    <label for="vNo" class="radioLabel">არა</label><br>
                     <div id="vaccinatedNumber">
                         <form>
                             <h1>აირჩიე რომელ ეტაპზე ხარ:</h1>
                             <input id="firstSecond" type="radio" class="radioButton" name="vaccinatedNumb"
                                 value="firstSecond" />
-                            <label for="firstSecond">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label><br>
+                            <label for="firstSecond" class="radioLabel">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label><br>
                             <input id="both" type="radio" class="radioButton" name="vaccinatedNumb" value="both" />
-                            <label for="both">სრულად ვაქცინირებული ვარ</label><br>
+                            <label for="both" class="radioLabel">სრულად ვაქცინირებული ვარ</label><br>
                             <input id="first" type="radio" class="radioButton" name="vaccinatedNumb" value="first" />
-                            <label for="first">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label><br>
+                            <label for="first" class="radioLabel">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label><br>
                         </form>
-                        <div id="booking"><i class="fas fa-hand-point-right"></i>რომ აღარ გადადო, ბარემ ახლავე
-                            დარეგისტრირდი -<a id="bookingMoh" href="https://booking.moh.gov.ge/" target="_blank">
+                        <div id="booking" class="hint"><i class="fas fa-hand-point-right"></i> რომ აღარ გადადო, ბარემ ახლავე
+                            დარეგისტრირდი <br><a id="bookingMoh" href="https://booking.moh.gov.ge/" target="_blank">
                                 [https://booking.moh.gov.ge/]</a>
                         </div>
                     </div>
@@ -167,19 +160,19 @@
                             <h1>რას ელოდები?:</h1>
                             <input id="registered" type="radio" class="radioButton" name="noVaccinated"
                                 value="registered" />
-                            <label for="registered">დარეგისტრირებული ვარ და ველოდები თარიღს</label><br>
+                            <label for="registered" class="radioLabel">დარეგისტრირებული ვარ და ველოდები თარიღს</label><br>
                             <input id="notPlanning" type="radio" class="radioButton" name="noVaccinated"
                                 value="notPlanning" />
-                            <label for="notPlanning">არ ვგეგმავ</label><br>
+                            <label for="notPlanning" class="radioLabel">არ ვგეგმავ</label><br>
                             <input id="recovered" type="radio" class="radioButton" name="noVaccinated"
                                 value="recovered" />
-                            <label for="recovered">გადატანილი მაქვს და ვგეგმავ აცრას</label><br>
+                            <label for="recovered" class="radioLabel">გადატანილი მაქვს და ვგეგმავ აცრას</label><br>
                         </form>
-                        <a id="bookingMoh1" href="https://booking.moh.gov.ge/" target="_blank"><i
+                        <a id="bookingMoh1" href="https://booking.moh.gov.ge/" target="_blank" class="hint"><i
                                 class="fas fa-hand-point-right"></i>
                             [https://booking.moh.gov.ge/]</a>
                     </div>
-                    <div id="bookingMoh2">ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
+                    <div id="bookingMoh2" class="hint">ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
                         გაკეთება.
                         <i class="fas fa-hand-point-right"></i><a id="" href="https://booking.moh.gov.ge/"
                             target="_blank"> [https://booking.moh.gov.ge/]</a>
@@ -221,41 +214,41 @@
                         <input id="twiceWeek" type="radio" class="radioButton" name="onlineMeeting" value="twiceWeek"
                             oninvalid="this.setCustomValidity('აირჩიეთ ერთ-ერთი')" onclick="clearValidity();"
                             required />
-                        <label for="twiceWeek">კვირაში ორჯერ</label><br>
+                        <label for="twiceWeek" class="radioLabel">კვირაში ორჯერ</label><br>
                         <input id="onceWeek" type="radio" class="radioButton" name="onlineMeeting" value="onceWeek"
                             onclick="clearValidity();" />
-                        <label for="onceWeek">კვირაში ერთხელ</label><br>
+                        <label for="onceWeek" class="radioLabel">კვირაში ერთხელ</label><br>
                         <input id="twoWeeks" type="radio" class="radioButton" name="onlineMeeting" value="twoWeeks"
                             onclick="clearValidity();" />
-                        <label for="twoWeeks">ორ კვირაში ერთხელ</label><br>
+                        <label for="twoWeeks" class="radioLabel">ორ კვირაში ერთხელ</label><br>
                         <input id="onceMonth" type="radio" class="radioButton" name="onlineMeeting" value="onceMonth"
                             onclick="clearValidity();" />
-                        <label for="onceMonth">თვეში ერთხელ</label><br>
+                        <label for="onceMonth" class="radioLabel">თვეში ერთხელ</label><br>
 
                     </div>
 
                     <div id="officeDays">
                         <h1>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
-                            სადაც ყველა სურვილისამებრ ჩაერთვება?</h1>
+                            სადაც ყველა სურვილისამებრ ჩაერთვება?*</h1>
                         <input id="zeroOffice" type="radio" class="radioButton" name="officeDay" value="zeroOffice"
                             oninvalid="this.setCustomValidity('აირჩიეთ ერთ-ერთი')" onclick="clearValidity1();"
                             required />
-                        <label for="zeroOffice">0</label><br>
+                        <label for="zeroOffice" class="radioLabel">0</label><br>
                         <input id="onceOffice" type="radio" class="radioButton" name="officeDay" value="onceOffice"
                             onclick="clearValidity1();" />
-                        <label for="onceOffice">1</label><br>
+                        <label for="onceOffice" class="radioLabel">1</label><br>
                         <input id="twoOffice" type="radio" class="radioButton" name="officeDay" value="twoOffice"
                             onclick="clearValidity1();" />
-                        <label for="twoOffice">2</label><br>
+                        <label for="twoOffice" class="radioLabel">2</label><br>
                         <input id="threeOffice" type="radio" class="radioButton" name="officeDay" value="threeOffice"
                             onclick="clearValidity1();" />
-                        <label for="threeOffice">3</label><br>
+                        <label for="threeOffice" class="radioLabel">3</label><br>
                         <input id="fourOffice" type="radio" class="radioButton" name="officeDay" value="fourOffice"
                             onclick="clearValidity1();" />
-                        <label for="fourOffice">4</label><br>
+                        <label for="fourOffice" class="radioLabel">4</label><br>
                         <input id="fiveOffice" type="radio" class="radioButton" name="officeDay" value="fiveOffice"
                             onclick="clearValidity1();" />
-                        <label for="fiveOffice">5</label><br>
+                        <label for="fiveOffice" class="radioLabel">5</label><br>
 
                     </div>
                     <div>
