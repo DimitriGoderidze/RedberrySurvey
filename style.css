@@ -1,5 +1,7 @@
 html {
-  height: max-content;
+  height: 980px;
+  width: 1800px;
+  margin: 30px;
 }
 
 .rect {
@@ -27,16 +29,17 @@ html {
 .fa-hand-point-right {
   color: orange;
 }
+label {
+  font-size: 50px;
+}
 
 h1 {
-  font-size: 20px;
+  font-size: 50px;
   font-weight: 100;
   margin-left: 30px;
 }
 
 body {
-  width: 1200px;
-  height: 700px;
   text-align: center;
   height: max-content;
   background-color: #b5c0c7;
@@ -61,8 +64,11 @@ body::-webkit-scrollbar {
 
 .input {
   display: inline-block;
-  padding: 12px;
   border-radius: 4px;
+}
+p {
+  margin: 30px;
+  font-size: 30px;
 }
 
 .button {
@@ -128,23 +134,25 @@ textarea {
 .imgContainer {
   height: 500ox;
 }
-.row {
+.row,
+#introduction {
   background-color: white;
-  height: 700px;
+  height: 980px;
   margin: 30px;
-  width: 1400px;
+  width: 1800px;
   display: flex;
   text-align: left;
 }
 .column {
-  height: 700px;
-  width: 700px;
+  height: 980px;
+  width: 900px;
   flex: 50%;
-  border: 1px solid black;
   text-align: left;
   position: relative;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: 1px solid black;
+  padding: 40px;
 }
 .column::-webkit-scrollbar {
   display: none;
@@ -154,8 +162,8 @@ textarea {
   position: relative;
   top: 0;
   left: 0;
-  height: 500px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
 }
 
 .space {
@@ -167,7 +175,6 @@ textarea {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: xx-large;
   text-align: left;
-  margin-left: 10%;
 }
 
 .image2container {
@@ -175,8 +182,15 @@ textarea {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  width: 600px;
+  height: 790px;
+  width: 820px;
+}
+.rightTop {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 110px;
 }
 
 #introImg {
@@ -225,4 +239,15 @@ img {
 
 #hi {
   display: none;
+}
+
+@media only screen and (max-width: 1600px) {
+  .row {
+    width: 1102px;
+    height: 700px;
+  }
+  .column {
+    width: 500px;
+    height: 700px;
+  }
 }
