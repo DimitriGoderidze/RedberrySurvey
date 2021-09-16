@@ -5,15 +5,16 @@ html {
 }
 
 .rect {
-  margin-top: 130px;
+  margin-top: 220px;
   margin-left: 50px;
   position: absolute;
   height: 75px;
-  width: 500px;
+  width: 700px;
   background-color: #d6d16e;
 }
 .radioButton {
-  margin-left: 30px !important;
+  height: 25px;
+  width: 25px;
 }
 
 .circle {
@@ -30,12 +31,16 @@ html {
   color: orange;
 }
 label {
-  font-size: 50px;
+  font-size: 25px;
+  margin-left: 50px;
+}
+.radioLabel {
+  margin-left: 0px;
 }
 
 h1 {
-  font-size: 50px;
-  font-weight: 100;
+  font-size: 30px;
+  font-weight: 700;
   margin-left: 30px;
 }
 
@@ -51,24 +56,36 @@ body::-webkit-scrollbar {
 
 .inputContainer {
   margin-bottom: 15px;
-  max-width: 300px;
+  max-width: 700px;
   margin: 20px;
 }
 
 .inputContainer[data-errorName]::after {
   content: attr(data-errorName);
-  font-size: 80%;
+  font-size: 25px;
   border-color: #c92432;
   color: #c92432;
+  margin-left: 50px;
+  display: block;
 }
 
-.input {
+input {
   display: inline-block;
   border-radius: 4px;
+  border: 3px solid #a8a8a8;
+  height: 50px;
+  width: 500px;
+  margin-left: 50px;
+  font-size: 25px;
 }
+input[type="radio"] {
+  width: 100px;
+}
+
 p {
   margin: 30px;
-  font-size: 30px;
+  font-size: 20px;
+  margin-left: 70px;
 }
 
 .button {
@@ -110,6 +127,10 @@ hr {
   opacity: 1;
   margin: 1%;
 }
+#hr1 {
+  width: 50%;
+  margin-left: 70px;
+}
 h2 {
   text-align: end;
   margin-right: 10%;
@@ -131,9 +152,7 @@ textarea {
   margin-right: auto;
   width: 50%;
 }
-.imgContainer {
-  height: 500ox;
-}
+
 .row,
 #introduction {
   background-color: white;
@@ -169,12 +188,18 @@ textarea {
 .space {
   height: 3%;
 }
-
+.hint {
+  height: 100px;
+  font-size: 30px;
+  margin-left: 70px;
+}
 .redbery {
   color: red;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: xx-large;
+  font-weight: 1000;
   text-align: left;
+  margin-left: 70px;
 }
 
 .image2container {
@@ -215,6 +240,7 @@ img {
   border: none;
   font-weight: 800;
   cursor: pointer;
+  background-color: white;
 }
 #introButton:hover {
   text-shadow: 4px 4px 0 gray;
@@ -239,15 +265,4 @@ img {
 
 #hi {
   display: none;
-}
-
-@media only screen and (max-width: 1600px) {
-  .row {
-    width: 1102px;
-    height: 700px;
-  }
-  .column {
-    width: 500px;
-    height: 700px;
-  }
 }
