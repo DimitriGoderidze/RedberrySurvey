@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./Rebderry.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/alk-rounded-mtav-med/css/alk-rounded-mtav-med.min.css">
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -18,14 +18,15 @@
 
 <body>
     <div id="introduction" class="pageWrapper">
-        <img id="introImg" src="./img/main logo.png" alt="" class="center"></img>
+        <img id="introImg" src="./img/main logo.png" alt="" class="center"></img><br>
         <button id="introButton">კითხვარის <br>დაწყება</button>
     </div>
     <div id="identification" class="pageWrapper">
         <div class="row">
             <div class="column">
-                <div class="redbery">REDBERY</div>
+
                 <form id="identificationForm">
+                    <div class="redbery">REDBERY</div>
                     <div class="inputContainer" data-errorName="*" id="nameError">
                         <label for="name1" class="name-label">სახელი*</label><br>
                         <input type="text" id="name1" value=""><br>
@@ -47,8 +48,10 @@
 
             </div>
             <div class="column">
-                <h2>1/4</h2>
-                <hr>
+                <div class="rightTop">
+                    <h2>1/4</h2>
+                    <hr>
+                </div>
                 <div class="rect"></div>
                 <div class="image2container">
                     <img class="backImg" id="identificationImg" src="./img/scan2.png" alt=""></img>
@@ -91,8 +94,8 @@
                             oninvalid="this.setCustomValidity('მიუთითეთ სწორი თარიღი დდ/თთ/წწ')"
                             oninput="this.setCustomValidity('')"
                             pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$" required /><br>
-                            <div class="space"></div>
-                        <input type="number"  id="numberA" pattern="[0-9]*" value=""
+                        <div class="space"></div>
+                        <input type="number" id="numberA" pattern="[0-9]*" value=""
                             placeholder="ანტისხეულების რაოდენობა"
                             oninvalid="this.setCustomValidity('მიუთითეთ სწორი რაოდენობა')"
                             oninput="this.setCustomValidity('')" required><br>
@@ -118,8 +121,10 @@
             </div>
 
             <div class="column">
-                <h2>2/4</h2>
-                <hr>
+                <div class="rightTop">
+                    <h2>2/4</h2>
+                    <hr>
+                </div>
                 <div class="circle"></div>
                 <img id="" src="./img/vaccinate2.png" alt=""></img>
                 <div class="buttonContainerNext">
@@ -186,8 +191,10 @@
                 </div>
             </div>
             <div class="column">
-                <h2>3/4</h2>
-                <hr>
+                <div class="rightTop">
+                    <h2>3/4</h2>
+                    <hr>
+                </div>
                 <div class="circle"></div>
                 <img id="" src="./img/doctor2.png" alt=""></img>
                 <div class="buttonContainerNext">
@@ -207,68 +214,76 @@
                     ბევრისთვის არის და ყოფილა წლების განმავლობაში ერთად მიზნებისთვის ბრძოლის მიზეზი,
                     ბევრისთვის კი - ჩვენთან გადმოსვლის. პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ
                     პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
-                <div id="onlineMeetings">
-                    <form>
-                        <form>
-                            <h1>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
-                                სადაც ყველა სურვილისამებრ ჩაერთვება?*</h1>
-                            <input id="twiceWeek" type="radio" class="radioButton" name="onlineMeeting"
-                                value="twiceWeek" />
-                            <label for="twiceWeek">კვირაში ორჯერ</label><br>
-                            <input id="onceWeek" type="radio" class="radioButton" name="onlineMeeting"
-                                value="onceWeek" />
-                            <label for="onceWeek">კვირაში ერთხელ</label><br>
-                            <input id="twoWeeks" type="radio" class="radioButton" name="onlineMeeting"
-                                value="twoWeeks" />
-                            <label for="twoWeeks">ორ კვირაში ერთხელ</label><br>
-                            <input id="onceMonth" type="radio" class="radioButton" name="onlineMeeting"
-                                value="onceMonth" />
-                            <label for="onceMonth">თვეში ერთხელ</label><br>
-                        </form>
-                </div>
+                <form id="recomendationsForm" action="">
+                    <div id="onlineMeetings">
+                        <h1>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
+                            სადაც ყველა სურვილისამებრ ჩაერთვება?*</h1>
+                        <input id="twiceWeek" type="radio" class="radioButton" name="onlineMeeting" value="twiceWeek"
+                            oninvalid="this.setCustomValidity('აირჩიეთ ერთ-ერთი')" onclick="clearValidity();"
+                            required />
+                        <label for="twiceWeek">კვირაში ორჯერ</label><br>
+                        <input id="onceWeek" type="radio" class="radioButton" name="onlineMeeting" value="onceWeek"
+                            onclick="clearValidity();" />
+                        <label for="onceWeek">კვირაში ერთხელ</label><br>
+                        <input id="twoWeeks" type="radio" class="radioButton" name="onlineMeeting" value="twoWeeks"
+                            onclick="clearValidity();" />
+                        <label for="twoWeeks">ორ კვირაში ერთხელ</label><br>
+                        <input id="onceMonth" type="radio" class="radioButton" name="onlineMeeting" value="onceMonth"
+                            onclick="clearValidity();" />
+                        <label for="onceMonth">თვეში ერთხელ</label><br>
 
-                <div id="officeDays">
-                    <form>
+                    </div>
+
+                    <div id="officeDays">
                         <h1>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
                             სადაც ყველა სურვილისამებრ ჩაერთვება?</h1>
-                        <input id="zeroOffice" type="radio" class="radioButton" name="officeDay" value="zeroOffice" />
+                        <input id="zeroOffice" type="radio" class="radioButton" name="officeDay" value="zeroOffice"
+                            oninvalid="this.setCustomValidity('აირჩიეთ ერთ-ერთი')" onclick="clearValidity1();"
+                            required />
                         <label for="zeroOffice">0</label><br>
-                        <input id="onceOffice" type="radio" class="radioButton" name="officeDay" value="onceOffice" />
+                        <input id="onceOffice" type="radio" class="radioButton" name="officeDay" value="onceOffice"
+                            onclick="clearValidity1();" />
                         <label for="onceOffice">1</label><br>
-                        <input id="twoOffice" type="radio" class="radioButton" name="officeDay" value="twoOffice" />
+                        <input id="twoOffice" type="radio" class="radioButton" name="officeDay" value="twoOffice"
+                            onclick="clearValidity1();" />
                         <label for="twoOffice">2</label><br>
-                        <input id="threeOffice" type="radio" class="radioButton" name="officeDay" value="threeOffice" />
+                        <input id="threeOffice" type="radio" class="radioButton" name="officeDay" value="threeOffice"
+                            onclick="clearValidity1();" />
                         <label for="threeOffice">3</label><br>
-                        <input id="fourOffice" type="radio" class="radioButton" name="officeDay" value="fourOffice" />
+                        <input id="fourOffice" type="radio" class="radioButton" name="officeDay" value="fourOffice"
+                            onclick="clearValidity1();" />
                         <label for="fourOffice">4</label><br>
-                        <input id="fiveOffice" type="radio" class="radioButton" name="officeDay" value="fiveOffice" />
+                        <input id="fiveOffice" type="radio" class="radioButton" name="officeDay" value="fiveOffice"
+                            onclick="clearValidity1();" />
                         <label for="fiveOffice">5</label><br>
-                    </form>
-                </div>
-                <div>
-                    <label for="comments" class="textareaComment">რას ფიქრობ ფიზიკურ შეკრებებზე?</label><br>
-                    <textarea name="comments" id="comments" cols="50" rows="10"></textarea><br>
-                </div>
-                <div>
-                    <label for="comments1" class="textareaComment">რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას
-                        დაამატებდი, რას
-                        შეცვლიდი?</label><br>
-                    <textarea name="comments1" id="comments1" cols="50" rows="10"></textarea><br>
-                </div>
 
+                    </div>
+                    <div>
+                        <label for="comments" class="textareaComment">რას ფიქრობ ფიზიკურ შეკრებებზე?</label><br>
+                        <textarea id="meetings" name="comments" id="comments" cols="50" rows="10"></textarea><br>
+                    </div>
+                    <div>
+                        <label for="comments1" class="textareaComment">რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას
+                            დაამატებდი, რას
+                            შეცვლიდი?</label><br>
+                        <textarea id="environment" name="comments1" id="comments1" cols="50" rows="10"></textarea><br>
+                        <button type="submit" id="recomendationsButton">დასრულება</button><br>
                 </form>
-                <button type="button" id="recomendationsButton" disabled="true">დასრულება</button><br>
                 <button style="border:none; background: none;" class="fas fa-chevron-left" type="button"
                     id="recomendationsPrevius"></button>
             </div>
-            <div class="column">
+
+        </div>
+        <div class="column">
+            <div class="rightTop">
                 <h2>4/4</h2>
                 <hr>
-                <div class="circle"></div>
-                <img id="" src="./img/vaccinate2.png" alt=""></img>
-
             </div>
+            <div class="circle"></div>
+            <img id="" src="./img/vaccinate2.png" alt=""></img>
+
         </div>
+    </div>
 
     </div>
 
@@ -277,7 +292,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./Rebderry.js" type="text/babel"></script>
+    <script src="./script.js" type="text/babel"></script>
 </body>
 
 </html>
