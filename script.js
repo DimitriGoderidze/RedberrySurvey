@@ -1,3 +1,25 @@
+var info = {
+  name: "",
+  surname: "",
+  mail: "",
+  recovered: "",
+  antiTest: "",
+  testResult: "",
+  testDate: "",
+  covidDate: "",
+  vacinated: "",
+  vacineDose: "",
+  notVaccinatedReason: "",
+  recomendationsOnlineMeeting: "",
+  recomendationsofficeDay: "",
+  onlineMeetingOpinion: "",
+  environmentOpinion: "",
+};
+
+var nameAnswer;
+var surnameAnswer;
+var mailAnswer;
+
 var name = document.querySelector("#name");
 var surname = document.querySelector("#surname");
 var email = document.querySelector("#email");
@@ -105,6 +127,9 @@ identificationNext.addEventListener("click", function () {
     surnameError.getAttribute("data-errorName") == "" &&
     nameError.getAttribute("data-errorName") == ""
   ) {
+    info.name = name1.value;
+    info.mail = imail.value;
+    info.surname = surname.value;
     identification.style.display = "none";
     covid19.style.display = "inline-block";
   }
@@ -116,6 +141,7 @@ var covid19Form = document.getElementById("covid19Form");
 
 $("#yes").click(function () {
   if ($("#yes").is(":checked")) {
+    info.recovered = "გადატანილი აქვს";
     test.style.display = "inline-block";
     anti.style.display = "none";
     covid19Button.disabled = true;
@@ -123,6 +149,7 @@ $("#yes").click(function () {
 });
 $("#no").click(function () {
   if ($("#no").is(":checked")) {
+    info.recovered = "არ აქვს გადატანილი";
     test.style.display = "none";
     anti.style.display = "none";
     testResults.style.display = "none";
@@ -131,6 +158,7 @@ $("#no").click(function () {
 });
 $("#now").click(function () {
   if ($("#now").is(":checked")) {
+    info.recovered = "ახლა აქვს კოვიდი";
     test.style.display = "none";
     anti.style.display = "none";
     testResults.style.display = "none";
@@ -142,6 +170,7 @@ var testResults = document.getElementById("testResults");
 
 $("#tYes").click(function () {
   if ($("#tYes").is(":checked")) {
+    info.antiTest = "დიახ";
     anti.style.display = "none";
     testResults.style.display = "inline-block";
     covid19Button.disabled = true;
@@ -149,6 +178,7 @@ $("#tYes").click(function () {
 });
 $("#tNo").click(function () {
   if ($("#tNo").is(":checked")) {
+    info.antiTest = "არა";
     anti.style.display = "inline-block";
     testResults.style.display = "none";
   }
@@ -158,6 +188,8 @@ var testResultsButton = document.getElementById("testResultsButton");
 
 testResults.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  info.testResult = numberA.value;
+  info.testDate = dateA.value;
   anti.style.display = "inline-block";
 });
 var covid19Previus = document.getElementById("covid19Previus");
@@ -165,6 +197,7 @@ var vaccinated = document.getElementById("vaccinated");
 
 anti.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  info.covidDate = date.value;
   covid19Button.disabled = false;
 });
 
@@ -185,6 +218,7 @@ var notVaccinated = document.getElementById("notVaccinated");
 
 $("#vYes").click(function () {
   if ($("#vYes").is(":checked")) {
+    info.vacinated = "ვაქცინირებულია";
     vaccinatedNumber.style.display = "inline-block";
     notVaccinated.style.display = "none";
     vaccinatedButton.disabled = true;
@@ -193,6 +227,7 @@ $("#vYes").click(function () {
 });
 $("#vNo").click(function () {
   if ($("#vNo").is(":checked")) {
+    info.vacinated = "არ არის ვაქცინირებული";
     vaccinatedNumber.style.display = "none";
     notVaccinated.style.display = "inline-block";
     vaccinatedButton.disabled = true;
@@ -201,18 +236,21 @@ $("#vNo").click(function () {
 
 $("#first").click(function () {
   if ($("#first").is(":checked")) {
+    info.vacineDose = "პირველი დოზა და არ დარეგისტრირებულა მეორეზე";
     booking.style.display = "inline-block";
     vaccinatedButton.disabled = false;
   }
 });
 $("#firstSecond").click(function () {
   if ($("#firstSecond").is(":checked")) {
+    info.vacineDose = "დარეგისტრირებულია მეორე დოზისთვის";
     booking.style.display = "none";
     vaccinatedButton.disabled = false;
   }
 });
 $("#both").click(function () {
   if ($("#both").is(":checked")) {
+    info.vacineDose = "სრულად ვაქცინირებულია";
     booking.style.display = "none";
     vaccinatedButton.disabled = false;
   }
@@ -220,6 +258,7 @@ $("#both").click(function () {
 
 $("#notPlanning").click(function () {
   if ($("#notPlanning").is(":checked")) {
+    info.notVaccinatedReason = "არ გეგმავს";
     bookingMoh1.style.display = "inline-block";
     bookingMoh2.style.display = "none";
     vaccinatedButton.disabled = false;
@@ -227,6 +266,7 @@ $("#notPlanning").click(function () {
 });
 $("#registered").click(function () {
   if ($("#registered").is(":checked")) {
+    info.notVaccinatedReason = "დარეგისტრირებულია და ელოდება თარიღს";
     bookingMoh1.style.display = "none";
     bookingMoh2.style.display = "none";
     vaccinatedButton.disabled = false;
@@ -235,6 +275,7 @@ $("#registered").click(function () {
 
 $("#recovered").click(function () {
   if ($("#recovered").is(":checked")) {
+    info.notVaccinatedReason = "გადატანილი აქვს და გეგმავს აცრას";
     bookingMoh1.style.display = "none";
     bookingMoh2.style.display = "inline-block";
     vaccinatedButton.disabled = false;
@@ -253,22 +294,64 @@ vaccinatedButton.addEventListener("click", function (evt) {
   recomendations.style.display = "inline-block";
 });
 
-$("input[name='onlineMeeting']").change(function () {
-  if ($("input[name='officeDay']:checked").length > 0) {
-    recomendationsButton.disabled = false;
-  }
-});
-$("input[name='officeDay']").change(function () {
-  if ($("input[name='onlineMeeting']:checked").length > 0) {
-    recomendationsButton.disabled = false;
+// $("input[name='onlineMeeting']").change(function () {
+//   if ($("input[name='officeDay']:checked").length > 0) {
+//     recomendationsButton.disabled = false;
+//   }
+// });
+// $("input[name='officeDay']").change(function () {
+//   if ($("input[name='onlineMeeting']:checked").length > 0) {
+//     recomendationsButton.disabled = false;
+//   }
+// });
+function clearValidity() {
+  document.getElementById("twiceWeek").setCustomValidity("");
+}
+
+function clearValidity1() {
+  document.getElementById("zeroOffice").setCustomValidity("");
+}
+
+$('input[name="onlineMeeting"]').click(function () {
+  if ($("#twiceWeek").is(":checked")) {
+    info.recomendationsOnlineMeeting = "კვირაში ორჯერ";
+  } else if ($("#onceWeek").is(":checked")) {
+    info.recomendationsOnlineMeeting = "კვირაში ერთხელ";
+  } else if ($("#twoWeeks").is(":checked")) {
+    info.recomendationsOnlineMeeting = "ორ კვირაში ერთხელ";
+  } else if ($("#onceMonth").is(":checked")) {
+    info.recomendationsOnlineMeeting = "თვეში ერთხელ";
   }
 });
 
-recomendationsButton.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  recomendations.style.display = "none";
-  thanks.style.display = "inline-block";
+$('input[name="officeDay"]').click(function () {
+  if ($("#zeroOffice").is(":checked")) {
+    info.recomendationsofficeDay = "0";
+  } else if ($("#onceOffice").is(":checked")) {
+    info.recomendationsofficeDay = "1";
+  }
+  if ($("#twoOffice").is(":checked")) {
+    info.recomendationsofficeDay = "2";
+  } else if ($("#threeOffice").is(":checked")) {
+    info.recomendationsofficeDay = "3";
+  }
+  if ($("#fourOffice").is(":checked")) {
+    info.recomendationsofficeDay = "4";
+  } else if ($("#fiveOffice").is(":checked")) {
+    info.recomendationsofficeDay = "5";
+  }
 });
+
+document
+  .getElementById("recomendationsForm")
+  .addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    info.onlineMeetingOpinion = document.getElementById("meetings").value;
+    info.environmentOpinion = document.getElementById("environment").value;
+    console.log(info);
+    recomendations.style.display = "none";
+    thanks.style.display = "inline-block";
+  });
 
 recomendationsPrevius.addEventListener("click", function (evt) {
   evt.preventDefault();
