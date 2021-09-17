@@ -53,6 +53,7 @@ var vaccinated = document.getElementById("vaccinated");
 introButton.addEventListener("click", function () {
   introduction.style.display = "none";
   identification.style.display = "inline-block";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
 });
 
 var regexName = /^[ა-ჰa-zA-Z]+$/gi;
@@ -136,6 +137,10 @@ identificationNext.addEventListener("click", function () {
     info.surname = surname.value;
     identification.style.display = "none";
     covid19.style.display = "inline-block";
+    $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
+    $(".circle")
+      .css({ width: 0.0, height: 0.0 })
+      .animate({ width: 200, height: 200 }, 250);
   }
 });
 
@@ -287,12 +292,14 @@ covid19Button.addEventListener("click", function (evt) {
   evt.preventDefault();
   covid19.style.display = "none";
   vaccinated.style.display = "inline-block";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
 });
 
 covid19Previus.addEventListener("click", function (evt) {
   evt.preventDefault();
   covid19.style.display = "none";
   identification.style.display = "inline-block";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
 });
 
 var vaccinatedNumber = document.getElementById("vaccinatedNumber");
@@ -368,24 +375,20 @@ vaccinatedPrevius.addEventListener("click", function (evt) {
   evt.preventDefault();
   covid19.style.display = "inline-block";
   vaccinated.style.display = "none";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
+  $(".circle")
+    .css({ width: 0.0, height: 0.0 })
+    .animate({ width: 200, height: 200 }, 250);
 });
 
 vaccinatedButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   vaccinated.style.display = "none";
   recomendations.style.display = "inline-block";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
+  $(".imgInmate1").css({ opacity: 0.0 }).animate({ opacity: 0.8 }, 250);
 });
 
-// $("input[name='onlineMeeting']").change(function () {
-//   if ($("input[name='officeDay']:checked").length > 0) {
-//     recomendationsButton.disabled = false;
-//   }
-// });
-// $("input[name='officeDay']").change(function () {
-//   if ($("input[name='onlineMeeting']:checked").length > 0) {
-//     recomendationsButton.disabled = false;
-//   }
-// });
 function clearValidity() {
   document.getElementById("twiceWeek").setCustomValidity("");
 }
@@ -439,4 +442,5 @@ recomendationsPrevius.addEventListener("click", function (evt) {
   evt.preventDefault();
   recomendations.style.display = "none";
   vaccinated.style.display = "inline-block";
+  $(".imgInmate").css({ width: 0.0 }).animate({ width: 753 }, 250);
 });
