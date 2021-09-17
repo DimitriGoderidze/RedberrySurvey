@@ -9,7 +9,7 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/bpg-banner-caps/css/bpg-banner-caps.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,10 +52,8 @@
                     <h2>1/4</h2>
                     <hr>
                 </div>
-                <div class="rect"></div>
-                <div class="image2container">
-                    <img class="backImg" id="identificationImg" src="./img/scan2.png" alt=""></img>
-                </div>
+                <div class="imgInmate1 rect"></div>
+                    <img class="backImg imgInmate" id="identificationImg" src="./img/scan2.png" alt=""></img>
                 <div class="buttonContainerNext">
                     <button style="border:none; background: none;" class="fas fa-chevron-right" id="identificationNext"
                         class="next"></button>
@@ -118,8 +116,8 @@
                     <h2>2/4</h2>
                     <hr>
                 </div>
-                <div class="circle"></div>
-                <img id="" src="./img/vaccinate2.png" alt=""></img>
+                <div class="circle imgInmate1"></div>
+                <img class="imgInmate" id="" src="./img/vaccinate2.png" alt=""></img>
                 <div class="buttonContainerNext">
                     <button style="border:none; background: none;" class="fas fa-chevron-right" type="button"
                         id="covid19Button" disabled="true"></button>
@@ -144,13 +142,16 @@
                             <h1>აირჩიე რომელ ეტაპზე ხარ:</h1>
                             <input id="firstSecond" type="radio" class="radioButton" name="vaccinatedNumb"
                                 value="firstSecond" />
-                            <label for="firstSecond" class="radioLabel">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label><br>
+                            <label for="firstSecond" class="radioLabel">პირველი დოზა და დარეგისტრირებული ვარ
+                                მეორეზე</label><br>
                             <input id="both" type="radio" class="radioButton" name="vaccinatedNumb" value="both" />
                             <label for="both" class="radioLabel">სრულად ვაქცინირებული ვარ</label><br>
                             <input id="first" type="radio" class="radioButton" name="vaccinatedNumb" value="first" />
-                            <label for="first" class="radioLabel">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label><br>
+                            <label for="first" class="radioLabel">პირველი დოზა და არ დავრეგისტრირებულვარ
+                                მეორეზე</label><br>
                         </form>
-                        <div id="booking" class="hint"><i class="fas fa-hand-point-right"></i> რომ აღარ გადადო, ბარემ ახლავე
+                        <div id="booking" class="hint"><i class="fas fa-hand-point-right"></i> რომ აღარ გადადო, ბარემ
+                            ახლავე
                             დარეგისტრირდი <br><a id="bookingMoh" href="https://booking.moh.gov.ge/" target="_blank">
                                 [https://booking.moh.gov.ge/]</a>
                         </div>
@@ -160,7 +161,8 @@
                             <h1>რას ელოდები?:</h1>
                             <input id="registered" type="radio" class="radioButton" name="noVaccinated"
                                 value="registered" />
-                            <label for="registered" class="radioLabel">დარეგისტრირებული ვარ და ველოდები თარიღს</label><br>
+                            <label for="registered" class="radioLabel">დარეგისტრირებული ვარ და ველოდები
+                                თარიღს</label><br>
                             <input id="notPlanning" type="radio" class="radioButton" name="noVaccinated"
                                 value="notPlanning" />
                             <label for="notPlanning" class="radioLabel">არ ვგეგმავ</label><br>
@@ -172,7 +174,8 @@
                                 class="fas fa-hand-point-right"></i>
                             [https://booking.moh.gov.ge/]</a>
                     </div>
-                    <div id="bookingMoh2" class="hint">ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
+                    <div id="bookingMoh2" class="hint">ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ
+                        ვაქცინის
                         გაკეთება.
                         <i class="fas fa-hand-point-right"></i><a id="" href="https://booking.moh.gov.ge/"
                             target="_blank"> [https://booking.moh.gov.ge/]</a>
@@ -188,8 +191,8 @@
                     <h2>3/4</h2>
                     <hr>
                 </div>
-                <div class="circle"></div>
-                <img id="" src="./img/doctor2.png" alt=""></img>
+                <img class="imgInmate1 topImg" id="" src="./img/star.png" alt=""></img>
+                <img class="imgInmate backImg" id="" src="./img/doctor2.png" alt=""></img>
                 <div class="buttonContainerNext">
 
                     <button style="border:none; background: none;" class="fas fa-chevron-right" type="button"
@@ -203,9 +206,11 @@
         <div class="row">
             <div class="column" style="overflow: scroll;">
                 <div class="redbery">REDBERY</div>
-                <p>რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით
+                <p class="staff">რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი
+                    თანამშრომლები ქმნით
                     ბევრისთვის არის და ყოფილა წლების განმავლობაში ერთად მიზნებისთვის ბრძოლის მიზეზი,
-                    ბევრისთვის კი - ჩვენთან გადმოსვლის. პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ
+                    ბევრისთვის კი - ჩვენთან გადმოსვლის. </p>
+                <p class="staff">პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ
                     პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
                 <form id="recomendationsForm" action="">
                     <div id="onlineMeetings">
@@ -253,13 +258,13 @@
                     </div>
                     <div>
                         <label for="comments" class="textareaComment">რას ფიქრობ ფიზიკურ შეკრებებზე?</label><br>
-                        <textarea id="meetings" name="comments" id="comments" cols="50" rows="10"></textarea><br>
+                        <textarea id="meetings" name="comments" id="comments" cols="80" rows="10"></textarea><br>
                     </div>
                     <div>
                         <label for="comments1" class="textareaComment">რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას
                             დაამატებდი, რას
                             შეცვლიდი?</label><br>
-                        <textarea id="environment" name="comments1" id="comments1" cols="50" rows="10"></textarea><br>
+                        <textarea id="environment" name="comments1" id="comments1" cols="80" rows="10"></textarea><br>
                         <button type="submit" id="recomendationsButton">დასრულება</button><br>
                 </form>
                 <button style="border:none; background: none;" class="fas fa-chevron-left" type="button"
@@ -272,16 +277,20 @@
                 <h2>4/4</h2>
                 <hr>
             </div>
-            <div class="circle"></div>
-            <img id="" src="./img/vaccinate2.png" alt=""></img>
-
+            <img class="topImg imgInmate1" id="heart" src="./img/heart.png" alt=""></img>
+            <img class="backImg imgInmate" id="bike" src="./img/bike2 1.png" alt=""></img>
         </div>
     </div>
 
     </div>
 
-    <div id="thanks">
-        მადლობა რომ დაგვითმე დრო და შეავსე კითხვარი
+    <div class="row" id="thanks">
+        <div class="thankU">
+            <img id="topDimonds" src="./img/dimonds.png" alt=""><br><br>
+            მადლობა<br>
+            <img id="bottomDimonds" src="./img/dimonds.png" alt="">
+        </div>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
