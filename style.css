@@ -12,13 +12,21 @@ html {
   width: 700px;
   background-color: #d6d16e;
 }
+
+.transition1 {
+  transition: opacity 2s;
+}
+.imgInmate1 {
+  opacity: 0.8;
+}
+
 .radioButton {
   height: 25px;
   width: 25px;
 }
 
 .circle {
-  margin-top: 220px;
+  margin-top: 210px;
   margin-left: 60px;
   position: absolute;
   height: 200px;
@@ -96,7 +104,7 @@ p {
   position: absolute;
   bottom: 20px;
   text-align: start;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 .buttonContainerPrevious {
   margin-right: 30px;
@@ -110,13 +118,18 @@ p {
   border-radius: 42px;
   right: 0;
   bottom: 20px;
-  text-align: start;
-  margin-left: 200px;
-  margin-top: 10px;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 50px;
+  height: 60px;
+  width: 200px;
+  font-size: 30px;
+  color: white;
+  padding: 5px;
 }
 #recomendationsPrevius {
-  margin-left: 550px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 810px;
 }
 
 hr {
@@ -140,7 +153,7 @@ textarea {
   border: 1px solid black;
 }
 .textareaComment {
-  margin: 10px;
+  margin: 30px;
 }
 
 .fa {
@@ -170,7 +183,6 @@ textarea {
   position: relative;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  border: 1px solid black;
   padding: 40px;
 }
 .column::-webkit-scrollbar {
@@ -181,8 +193,23 @@ textarea {
   position: relative;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.topImg {
+  position: absolute;
+  top: 150px;
+  left: 70px;
+  opacity: 0.9;
+}
+
+#bike {
+  width: 750px;
+}
+#heart {
+  top: 250px;
+  left: 150px;
 }
 
 .space {
@@ -220,7 +247,7 @@ textarea {
 
 #introImg {
   width: 8%;
-  margin-top: 10%;
+  margin-top: 15%;
   margin-bottom: 2%;
 }
 img {
@@ -245,6 +272,33 @@ img {
 #introButton:hover {
   text-shadow: 4px 4px 0 gray;
 }
+#thanks {
+  color: white;
+  background-color: #232323;
+  font-family: "BPG Banner Caps", sans-serif;
+  font-size: 60px;
+  letter-spacing: 20px;
+}
+.thankU {
+  margin-top: 350px;
+  margin-left: 700px;
+  line-height: 50px;
+  font-weight: 900;
+}
+#topDimonds {
+  margin-left: 50px;
+  width: 60px;
+  height: 60px;
+}
+#bottomDimonds {
+  margin-top: 10px;
+  margin-left: 350px;
+  width: 30px;
+  height: 30px;
+}
+.staff {
+  font-size: 30px;
+}
 
 #covid19,
 #test,
@@ -260,9 +314,5 @@ img {
 #recomendations,
 #thanks,
 #identification {
-  display: none;
-}
-
-#hi {
   display: none;
 }
